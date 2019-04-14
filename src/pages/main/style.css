@@ -1,0 +1,30 @@
+#main-container{
+  height: 100%;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+#main-container form{
+  display: flex;
+
+  flex-direction: column;
+}
+
+#main-container input {
+  margin: 20px 0;
+  border: 1px solid #cecece;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 5px; 
+}
+
+#main-container button{
+  color: white;
+  border: none;
+  background-color: #0f7dbd;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px 5px;
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { FaFile } from 'react-icons/fa';
+import {distanceInWords} from 'date-fns'
+import {pt} from 'date-fns/locale/pt'
 
 import api from '../../services/boxes-api';
 
@@ -34,7 +36,12 @@ export default class box extends Component {
               <FaFile size={24} color="#A5Cfff"/>
               <strong>{file.title}</strong>
             </a>
-              <span>{file.createdAt}</span>
+              <span> há {" "}
+              {
+                distanceInWords(file.createdAt, new Date(), 
+                {locale: pt})
+              } {" "} atrás
+              </span>
             </li>
           ))}
         </ul>

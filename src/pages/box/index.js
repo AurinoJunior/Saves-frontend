@@ -27,13 +27,16 @@ export default class box extends Component {
           <h1>{this.state.box.title}</h1>
         </header>
         <ul>
-          <li>
-            <a className="fileInfo" href=""> 
+          {/* Validação para ver se o array files não está vazio */}
+          {this.state.box.files && this.state.box.files.map( file => (
+            <li>
+            <a className="fileInfo" target="blank" href={file.url}>
               <FaFile size={24} color="#A5Cfff"/>
-              <strong>arquivo.pdf</strong>
+              <strong>{file.title}</strong>
             </a>
-              <span>Atualizado a 3 dias</span>
-          </li>
+              <span>{file.createdAt}</span>
+            </li>
+          ))}
         </ul>
       </div>
     );
